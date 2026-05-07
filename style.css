@@ -7,15 +7,23 @@
 }
 
 body {
-    min-height: 100vh;
-    background: #dcecdd;
-}
-
-.container {
+    width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #dcecdd;
+    overflow-x: hidden;
+}
+
+.container {
+    flex: 1;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    padding: 30px 20px;
 }
 
 .criar_conta,
@@ -24,19 +32,22 @@ body {
 }
 
 .processo_login {
-    max-width: 100%;
-    width: 700px;
-    height: auto;
+    width: min(100%, 700px);
+    padding: 40px 20px;
     min-height: 500px;
     background: #c2d8c4;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    gap: 20px;
+    overflow: hidden;
 }
 
 .titulo_login {
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .titulo_login h2 {
@@ -48,6 +59,9 @@ body {
 
 .botoes_sites {
     display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .botoes_sites i {
@@ -66,19 +80,8 @@ body {
     transition: all 0.2s linear;
 }
 
-.facebook_buttom {
-    margin-right: 30px;
-    margin-left: -30px;
-}
-
-.linkedin_buttom {
-    margin-right: -30px;
-    margin-left: 30px;
-}
-
 .mensagem {
     font-size: 15px;
-    margin-top: -15px;
     font-family: Montserrat;
 }
 
@@ -87,14 +90,14 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    gap: 15px;
 }
 
 .email,
 .senha {
     position: relative;
-    margin-bottom: 20px;
-    max-width: 100%;
-    width: 450px;
+    max-width: 450px;
+    width: 100%;
 }
 
 .email input {
@@ -123,7 +126,6 @@ body {
 
 .senha {
     position: relative;
-    margin-top: -10px;
     margin-bottom: 10px;
 }
 
@@ -152,19 +154,25 @@ body {
 }
 
 .container2 {
+    width: 100%;
+    max-width: 450px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
 .esqueceu_senha {
-    margin-left: 90px;
     margin-top: -10px;
 }
 
 .esqueceu_senha a {
     color: #222222;
-    font-size: 12px;
+    font-size: 11px;
     font-family: montserrat;
+    white-space: normal;
+    text-align: right;
 
 }
 
@@ -176,6 +184,7 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
+    white-space: nowrap;
 }
 
 input[type="checkbox"] {
@@ -227,18 +236,19 @@ input[type="checkbox"]:checked::after {
 
 .aviso_entrar_conta {
     background-color: #222222;
-    height: 500px;
-    width: 400px;
+    min-height: 512px;
+    padding: 40px 20px;
+    width: min(100%, 400px);
     display: grid;
     place-items: center;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    overflow: hidden;
 }
 
 .aviso_entrar_conta h2 {
     color: #c2d8c4;
     font-family: montserrat;
-    margin-top: 170px;
     text-align: center;
     font-size: 25px;
 }
@@ -254,7 +264,6 @@ input[type="checkbox"]:checked::after {
 .aviso_entrar_conta button {
     width: 200px;
     height: 50px;
-    margin-bottom: 130px;
     background-color: #c2d8c4;
     border: 1px solid #c2d8c4;
     color: #222222;
@@ -275,81 +284,57 @@ input[type="checkbox"]:checked::after {
         display: none;
     }
 
+    .criar_conta a,
+    .ou {
+        color: #222222;
+        font-family: Montserrat;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
     .processo_login {
         border-radius: 20px;
-        margin: 0 10%;
-        width: 90%;
-        height: 600px;
-    }
-
-    .ou {
-        display: flex;
-        font-size: 14px;
-        font-family: montserrat;
-        margin-top: -30px;
-    }
-
-    .criar_conta {
-        display: flex;
-        margin-top: -20px;
-    }
-
-    .criar_conta a {
-        color: #222222;
-        font-family: montserrat;
-        font-size: 16px;
-    }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .processo_login {
-        margin-left: 5%;
+        min-height: auto;
+        width: 100%;
     }
 
     .titulo_login h2 {
-        font-size: 24px;
-    }
-
-    .aviso_entrar_conta {
-        margin-right: 5%;
-    }
-
-    .email,
-    .senha {
-        position: relative;
-        max-width: 100%;
-        width: 350px;
-    }
-
-    .email i,
-    .senha i {
-        position: absolute;
-        left: 16px;
-        top: 50%;
-        transform: translateY(-50%);
+        font-size: 1.6em;
     }
 
     .email input,
     .senha input {
-        max-width: 100%;
         font-size: 14px;
     }
 
-    .aviso_entrar_conta h2 {
-        font-size: 21px;
+    .ou,
+    .criar_conta {
+        display: flex;
+        justify-content: center;
     }
 
-    .aviso_entrar_conta p {
-        font-size: 13px;
+    .criar_conta {
+        margin-top: 10px;
     }
+
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .processo_login {
-        margin-left: 5%;
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 20px;
     }
 
     .aviso_entrar_conta {
-        margin-right: 5%;
+        display: none;
+    }
+
+    .processo_login {
+        width: 100%;
+        max-width: 500px;
+
+        border-radius: 20px;
+        min-height: auto;
     }
 }
