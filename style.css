@@ -85,7 +85,8 @@ body {
     font-family: Montserrat;
 }
 
-.container_inputs {
+.container_inputs,
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,7 +95,8 @@ body {
 }
 
 .email,
-.senha {
+.senha,
+form {
     position: relative;
     max-width: 450px;
     width: 100%;

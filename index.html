@@ -37,19 +37,21 @@
             </div>
             <div class="mensagem">ou use sua conta de email:</div>
             <div class="container_inputs">
-                <div class="email">
-                    <input type="email" placeholder="Email">
-                    <i class="fa-regular fa-envelope"></i>
-                </div>
-                <div class="senha">
-                    <input type="password" placeholder="Senha">
-                    <i class="fa-solid fa-lock"></i>
-                </div>
+                <form action="cadastro.php" method="get" autocomplete="on">
+                    <div class="email">
+                        <input type="email" placeholder="Email" autocomplete="email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <div class="senha">
+                        <input type="password" placeholder="Senha" autocomplete="current-password" required>
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                </form>
             </div>
             <div class="container2">
                 <div class="checkbox_salvar_senha">
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" value="Conect">
                         Permanecer conectado.
                     </label>
                 </div>
